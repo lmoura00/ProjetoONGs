@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, StyleSheet } from 'react-native'
 
-export function MeioAmbiente(){
+export function Instagram(){
     return(
         <View style={styles.container}>
-            <Text style={styles.titulo}>MeioAmbiente</Text>
+            <Text style={styles.titulo}>INSTAGRAM</Text>
         </View>
     )
 }

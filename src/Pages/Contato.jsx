@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, StyleSheet } from 'react-native'
 
-export function Animais(){
+export function Contato(){
     return(
         <View style={styles.container}>
-            <Text style={styles.titulo}>Animais</Text>
+            <Text style={styles.titulo}>Contato</Text>
         </View>
     )
 }

@@ -2,7 +2,7 @@ import React from "react";
 import {Text, TouchableOpacity, Image, View, StyleSheet, ScrollView, KeyboardAvoidingView} from 'react-native'
 
 import LottieView from 'lottie-react-native'
-
+import { LinearGradient } from "expo-linear-gradient";
 import {useNavigation} from '@react-navigation/native'
 
 export function Home(){
@@ -12,96 +12,80 @@ export function Home(){
     return(
         <KeyboardAvoidingView style={{flex:1}}>
             <View style={styles.container}>
-                <Text style={styles.titulo}>Veja o que você pode ajudar!!</Text>
-                <Text style={styles.subTitle}>E ajude ainda hoje!</Text>
+                <Text style={styles.titulo}>Conheça mais sobre o projeto!!!</Text>
 
                 <View style={{flexDirection:'row'}} >
-                    <TouchableOpacity style={styles.botao} onPress={()=>navigation.navigate('Animais')}>
-                    <LottieView
-                        source={require('../assets/dog2.json')}
-                        autoPlay={true}
-                        loop={true}
-                        style={{
-                            width:75,
-                            height:75, 
-                            backgroundColor:'#f9f9f9', 
-                            borderRadius:25,
-                            alignSelf:'center'
-                        }}
-                    />
-                        <Text style={styles.textoBotao}>Animais</Text>
-                    </TouchableOpacity>
+                        <TouchableOpacity style={styles.botao} onPress={()=>navigation.navigate('Instagram')}>
+                    <LinearGradient colors={['#fff', '#ebebed', '#cfd0d1']} style={styles.gradiente}  >
+                        <LottieView
+                            source={require('../assets/69057-instagram.json')}
+                            autoPlay={true}
+                            loop={true}
+                            style={{
+                                width:75,
+                                height:75,  
+                                borderRadius:25,
+                                alignSelf:'center'
+                            }}
+                        />
+                            <Text style={styles.textoBotao}>Instagram</Text>
+                    </LinearGradient>
+                        </TouchableOpacity>
                 
-                    <TouchableOpacity style={styles.botao} onPress={()=>navigation.navigate('MeioAmbiente')}>
+                    <TouchableOpacity style={styles.botao} onPress={()=>navigation.navigate('PlayStore')}>
+                    <LinearGradient colors={['#fff', '#ebebed', '#cfd0d1']} style={styles.gradiente}  >
                     <LottieView
-                        source={require('../assets/67943-tree-green.json')}
+                        source={require('../assets/4529-playstore.json')}
                         autoPlay={true}
                         loop={true}
                         style={{
                             width:75,
                             height:75, 
-                            backgroundColor:'#f9f9f9', 
                             borderRadius:25,
                             alignSelf:'center'
                         }}
                     />
-                        <Text style={styles.textoBotao}>Meio ambiente</Text>
+                        <Text style={styles.textoBotao}>Play Store</Text>
+                        </LinearGradient>
                     </TouchableOpacity>
 
 
                 </View>
 
-                <View style={{flexDirection:'row'}}>
-                    <TouchableOpacity style={styles.botao} onPress={()=>navigation.navigate('Idosos')}>
-                    <LottieView
-                        source={require('../assets/120595-helping-the-needy (1).json')}
-                        autoPlay={true}
-                        loop={true}
-                        style={{
-                            width:75,
-                            height:75, 
-                            backgroundColor:'#f9f9f9', 
-                            borderRadius:25,
-                            alignSelf:'center'
-                        }}
-                    />
-                        <Text style={styles.textoBotao}>Idosos</Text>
-                    </TouchableOpacity>
-                
-                    <TouchableOpacity style={styles.botao} onPress={()=>navigation.navigate('CausasSociais')}>
+
+                <TouchableOpacity style={styles.botaoTodos} onPress={()=> navigation.navigate('Contato')}>
+                <LinearGradient colors={['#fff', '#ebebed', '#cfd0d1']} style={styles.botaoTodosGradiente} >
                         <LottieView
-                            source={require('../assets/73386-problem-solving-team.json')}
+                            source={require('../assets/74498-call-center-support-lottie-animation.json')}
                             autoPlay={true}
                             loop={true}
                             style={{
                                 width:65,
                                 height:65, 
-                                backgroundColor:'#f9f9f9', 
                                 borderRadius:25,
                                 alignSelf:'center'
                             }}
                         />
-                        <Text style={styles.textoBotao}>Causas Sociais</Text>
-                    </TouchableOpacity>
-
-
-                </View>
+                        <Text style={styles.textoBotao}>Contato</Text>
+                    </LinearGradient>
+                </TouchableOpacity>
 
                 <TouchableOpacity style={styles.botaoTodos} onPress={()=> navigation.navigate('Todos')}>
+                    <LinearGradient colors={['#fff', '#ebebed', '#cfd0d1']} style={styles.botaoTodosGradiente} >
                         <LottieView
-                            source={require('../assets/85643-loading-dots.json')}
+                            source={require('../assets/75746-about-us.json')}
                             autoPlay={true}
                             loop={true}
                             style={{
                                 width:65,
-                                height:65, 
-                                backgroundColor:'#f9f9f9', 
+                                height:65,  
                                 borderRadius:25,
                                 alignSelf:'center'
                             }}
                         />
-                        <Text style={styles.textoBotao}>Todos</Text>
-                    </TouchableOpacity>
+                        <Text style={styles.textoBotao}>Sobre a gente</Text>
+                    </LinearGradient>
+                </TouchableOpacity>
 
 
                 
@@ -142,6 +126,15 @@ const styles = StyleSheet.create({
         elevation:15,
         justifyContent:'center',
         margin:20,
+        shadowColor:'grey'
+        
+    },
+    gradiente:{
+        width: 120,
+        height:120,
+        borderRadius: 12,
+        justifyContent:'center',
+ 
         
     },
     botaoTodos:{
@@ -153,5 +146,11 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         margin:20,
         
+    },
+    botaoTodosGradiente:{
+        width: 220,
+        height:120,
+        borderRadius: 12,
+        justifyContent:'center',        
     }
 })

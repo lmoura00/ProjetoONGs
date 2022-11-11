@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, StyleSheet } from 'react-native'
 
-export function Idosos(){
+export function PlayStore(){
     return(
         <View style={styles.container}>
-            <Text style={styles.titulo}>Idosos</Text>
+            <Text style={styles.titulo}>MeioAmbiente</Text>
         </View>
     )
 }
